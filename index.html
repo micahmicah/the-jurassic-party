@@ -165,13 +165,13 @@
 
 	@keyframes head-roar{
 		0%{
-			-moz-transform:rotate(0deg);
+			transform:rotate(0deg);
 		}
 		50%{
-			-moz-transform:rotate(-30deg);
+			transform:rotate(-30deg);
 		}
 		100%{
-			-moz-transform:rotate(0deg);
+			transform:rotate(0deg);
 		}
 	}
 
@@ -318,17 +318,17 @@
 
 	@-moz-keyframes head-bang{
 		0%{
-			-webkit-transform:rotate(0deg);
+			-moz-transform:rotate(0deg);
 		}
 		25%{
-			-webkit-transform:rotate(-10deg);
+			-moz-transform:rotate(-10deg);
 		}
 
 		50%{
-			-webkit-transform:rotate(10deg);
+			-moz-transform:rotate(10deg);
 		}
 		100%{
-			-webkit-transform:rotate(0deg);
+			-moz-transform:rotate(0deg);
 		}
 	}
 
@@ -362,25 +362,25 @@
 
 	@-moz-keyframes chomp{
 		0%{
-			-webkit-transform:rotate(0deg);
+			-moz-transform:rotate(0deg);
 		}
 		50%{
-			-webkit-transform:rotate(-20deg);
+			-moz-transform:rotate(-20deg);
 		}
 		100%{
-			-webkit-transform:rotate(0deg);
+			-moz-transform:rotate(0deg);
 		}
 	}
 
 	@keyframes chomp{
 		0%{
-			-webkit-transform:rotate(0deg);
+			transform:rotate(0deg);
 		}
 		50%{
-			-webkit-transform:rotate(-20deg);
+			transform:rotate(-20deg);
 		}
 		100%{
-			-webkit-transform:rotate(0deg);
+			transform:rotate(0deg);
 		}
 	}
 
@@ -398,11 +398,11 @@
 
 	@-moz-keyframes clench{
 		0%{
-			-webkit-transform:rotate(-20deg);
+			-moz-transform:rotate(-20deg);
 		}
 		
 		100%{
-			-webkit-transform:rotate(-20deg);
+			-moz-transform:rotate(-20deg);
 		}
 	}
 
@@ -428,6 +428,21 @@
 		}
 		100%{
 			-webkit-transform:rotate(0deg);
+		}
+	}
+
+	@-moz-keyframes logo-shake{
+			0%{
+			-moz-transform:rotate(0deg);
+		}
+		50%{
+			-moz-transform:rotate(-5deg);
+		}
+		75%{
+			-moz-transform:rotate(5deg);
+		}
+		100%{
+			-moz-transform:rotate(0deg);
 		}
 	}
 
