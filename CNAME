@@ -1,0 +1,4 @@
+$ dig 30.party.micahbarrett.info +nostats +nocomments +nocmd
+# ;www.30.party.micahbarrett.info.                 IN      A
+# www.30.party.micahbarrett.info.          3592    IN      CNAME   micahmicah.github.io.
+# micahmicah.github.io.      43192   IN      A       204.232.175.78
