@@ -2,29 +2,39 @@
 <html>
 <head>
 	<title>30(million) Years Old</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<style type="text/css">
 	body{
 		background:black;
 		margin:0px;
 		-webkit-animation: flash 0.125s 3s ease-in 90,
-						   blast-flash 0.1s 11.25s ease-in 30;
-	}
+			     		   blast-flash 0.1s 11.25s ease-in 30;
+	       -moz-animation: flash 0.125s 3s ease-in 90,
+	                       blast-flash 0.1s 11.25s ease-in 30;
+	            animation: flash 0.125s 3s ease-in 90,
+	                       blast-flash 0.1s 11.25s ease-in 30;
+}
 
 	h1{
 		font-family:times;
 		font-weight:normal;
 		font-size:42px;
 		margin:20px auto;
-		color:white;
+		color:rgba(255,255,255,0.0);
 		text-align:center;
-		opacity: 0.0;
-		-webkit-transition:all 0.4s 16s ease-in;
+		
+		-webkit-transition:all 1.25s 15.5s ease-in;
+		   -moz-transition:all 1.25s 15.5s ease-in;
+    			transition:all 1.25s 15.5s ease-in;
 				
 	}
 
-	body:hover h1{
-		opacity:1.0;
+	.reveal{
+		color:rgba(255,255,255,1.0);
+
 	}
+
+	
 
 	.overlay{
 		width:100%;
@@ -46,6 +56,10 @@
 		background:url('img/logo-bg.png');
 		-webkit-animation: logo-shake 0.25s 3.25s linear 47,
 						   vertical-shake 0.25s 3.25s linear 47;
+		   -moz-animation: logo-shake 0.25s 3.25s linear 47,
+						   vertical-shake 0.25s 3.25s linear 47;
+			    animation: logo-shake 0.25s 3.25s linear 47,
+						   vertical-shake 0.25s 3.25s linear 47;
 	}
 
 	.head-container{
@@ -57,7 +71,12 @@
 		left:298px;
 		top:-20px;
 		-webkit-transform-origin:25px 324px;
+		   -moz-transform-origin:25px 324px;
+		        transform-origin:25px 324px;
 		-webkit-animation:head-roar 3.25s ease-in-out 1,
+						  shake 0.25s 3.25s ease-in 32,
+						  head-bang 0.1s 11.25s ease-in 30;
+		-moz-animation:head-roar 3.25s ease-in-out 1,
 						  shake 0.25s 3.25s ease-in 32,
 						  head-bang 0.1s 11.25s ease-in 30;
 	/*	-webkit-animation:shake 0.25s ease-in-out infinite;*/
@@ -95,6 +114,24 @@
 		}
 	}
 
+	@-moz-keyframes reveal{
+		from{
+			opacity: 0.0;
+		}
+		to{
+			opacity:1.0;
+		}
+	}
+
+	@keyframes reveal{
+		from{
+			opacity: 0.0;
+		}
+		to{
+			opacity:1.0;
+		}
+	}
+
 	@-webkit-keyframes head-roar{
 		0%{
 			-webkit-transform:rotate(0deg);
@@ -107,6 +144,32 @@
 		}
 	}
 
+	@-moz-keyframes head-roar{
+		0%{
+			-moz-transform:rotate(0deg);
+		}
+		50%{
+			-moz-transform:rotate(-30deg);
+		}
+		100%{
+			-moz-transform:rotate(0deg);
+		}
+	}
+
+	@keyframes head-roar{
+		0%{
+			-moz-transform:rotate(0deg);
+		}
+		50%{
+			-moz-transform:rotate(-30deg);
+		}
+		100%{
+			-moz-transform:rotate(0deg);
+		}
+	}
+
+
+
 	@-webkit-keyframes jaw-roar{
 		0%{
 			-webkit-transform:rotate(0deg);
@@ -115,6 +178,28 @@
 		}
 		100%{
 			-webkit-transform:rotate(0deg);
+		}
+	}
+
+	@-moz-keyframes jaw-roar{
+		0%{
+			-moz-transform:rotate(0deg);
+		}50%{
+			-moz-transform:rotate(15deg);
+		}
+		100%{
+			-moz-transform:rotate(0deg);
+		}
+	}
+
+	@keyframes jaw-roar{
+		0%{
+			-moz-transform:rotate(0deg);
+		}50%{
+			-moz-transform:rotate(15deg);
+		}
+		100%{
+			-moz-transform:rotate(0deg);
 		}
 	}
 
@@ -127,7 +212,43 @@
 		}
 	}
 
+	@-moz-keyframes flash{
+		from{
+			background:rgba(0,0,0,1.0);
+		}
+		to{
+			background:rgba(255,0,0,1.0);
+		}
+	}
+
+	@keyframes flash{
+		from{
+			background:rgba(0,0,0,1.0);
+		}
+		to{
+			background:rgba(255,0,0,1.0);
+		}
+	}
+
 	@-webkit-keyframes blast-flash{
+		from{
+			background:rgba(0,0,0,1.0);
+		}
+		to{
+			background:rgba(255,255,255,1.0);
+		}
+	}
+
+	@-moz-keyframes blast-flash{
+		from{
+			background:rgba(0,0,0,1.0);
+		}
+		to{
+			background:rgba(255,255,255,1.0);
+		}
+	}
+
+	@keyframes blast-flash{
 		from{
 			background:rgba(0,0,0,1.0);
 		}
@@ -146,7 +267,30 @@
 		100%{
 			-webkit-transform:rotate(0deg);
 		}
-		
+	}
+
+	@-moz-keyframes shake{
+		0%{
+			-webkit-transform:rotate(0deg);
+		}
+		50%{
+			-webkit-transform:rotate(-20deg);
+		}
+		100%{
+			-webkit-transform:rotate(0deg);
+		}
+	}
+
+	@keyframes shake{
+		0%{
+			-webkit-transform:rotate(0deg);
+		}
+		50%{
+			-webkit-transform:rotate(-20deg);
+		}
+		100%{
+			-webkit-transform:rotate(0deg);
+		}
 	}
 
 	@-webkit-keyframes head-bang{
@@ -163,7 +307,38 @@
 		100%{
 			-webkit-transform:rotate(0deg);
 		}
-		
+	}
+
+	@-moz-keyframes head-bang{
+		0%{
+			-webkit-transform:rotate(0deg);
+		}
+		25%{
+			-webkit-transform:rotate(-10deg);
+		}
+
+		50%{
+			-webkit-transform:rotate(10deg);
+		}
+		100%{
+			-webkit-transform:rotate(0deg);
+		}
+	}
+
+	@keyframes head-bang{
+		0%{
+			-webkit-transform:rotate(0deg);
+		}
+		25%{
+			-webkit-transform:rotate(-10deg);
+		}
+
+		50%{
+			-webkit-transform:rotate(10deg);
+		}
+		100%{
+			-webkit-transform:rotate(0deg);
+		}
 	}
 
 	@-webkit-keyframes chomp{
@@ -176,8 +351,33 @@
 		100%{
 			-webkit-transform:rotate(0deg);
 		}
-		
 	}
+
+	@-moz-keyframes chomp{
+		0%{
+			-webkit-transform:rotate(0deg);
+		}
+		50%{
+			-webkit-transform:rotate(-20deg);
+		}
+		100%{
+			-webkit-transform:rotate(0deg);
+		}
+	}
+
+	@keyframes chomp{
+		0%{
+			-webkit-transform:rotate(0deg);
+		}
+		50%{
+			-webkit-transform:rotate(-20deg);
+		}
+		100%{
+			-webkit-transform:rotate(0deg);
+		}
+	}
+
+
 
 	@-webkit-keyframes clench{
 		0%{
@@ -187,7 +387,26 @@
 		100%{
 			-webkit-transform:rotate(-20deg);
 		}
+	}
+
+	@-moz-keyframes clench{
+		0%{
+			-webkit-transform:rotate(-20deg);
+		}
 		
+		100%{
+			-webkit-transform:rotate(-20deg);
+		}
+	}
+
+	@keyframes clench{
+		0%{
+			-webkit-transform:rotate(-20deg);
+		}
+		
+		100%{
+			-webkit-transform:rotate(-20deg);
+		}
 	}
 
 	@-webkit-keyframes logo-shake{
@@ -218,7 +437,36 @@
 		100%{
 			margin-top:5%;
 		}
+	}
 
+	@-moz-keyframes vertical-shake{
+		0%{
+			margin-top:5%;
+		}
+		50%{
+			margin-top:1%;
+		}
+		75%{
+			margin-top: 7%:;
+		}
+		100%{
+			margin-top:5%;
+		}
+	}
+
+	@keyframes vertical-shake{
+		0%{
+			margin-top:5%;
+		}
+		50%{
+			margin-top:1%;
+		}
+		75%{
+			margin-top: 7%:;
+		}
+		100%{
+			margin-top:5%;
+		}
 	}
 
 	</style>
@@ -234,11 +482,20 @@
 	</div>
 
 	<audio  autoplay="autoplay">
-  <source src="horse.ogg" type="audio/ogg">
+  <source src="aud/rock-out.ogg" type="audio/ogg">
   <source src="aud/rock-out.mp3" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
 
-	<h1>Saturday, August 17th</h1>
+	<h1 class="date">Saturday, August 17th</h1>
+
+	<script>
+		// When the Document Object Model is ready
+jQuery(document).ready(function(){
+	jQuery('.date').delay(1200).addClass('reveal');
+
+});
+
+	</script>
 </body>
 </html>
