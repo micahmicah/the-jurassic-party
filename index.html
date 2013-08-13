@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	body{
+		background:black;
+		margin:0px;
+	}
+
+	.overlay{
+		width:100%;
+		margin:0px;
+		top:0px;
+		height:100%;
+		position:fixed;
+		z-index: 2;
+		/*-webkit-animation: flash 0.2s ease-in-out infinite;*/
+	}
+	
+
+	.logo-container{
+		width:800px;
+		height:600px;
+		position:relative;
+		/*border:1px solid yellow;*/
+		margin:5% auto;
+		background:url('img/logo-bg.png');
+	}
+
+	.head-container{
+		width:290px;
+		height:344px;
+		background:url('img/face.png');
+		/*border:1px solid blue;*/
+		position:absolute;
+		left:298px;
+		top:-20px;
+		-webkit-transform-origin:25px 324px;
+		-webkit-animation:shake 0.25s ease-in-out infinite;
+		
+	}
+
+	.jaw-container{
+		width:163px;
+		height:125px;
+		/*border:1px solid white;*/
+		background:url('img/jaw.png');
+		position:absolute;
+		left:67px;
+		top:206px;
+		-webkit-transform-origin:30px 30px;
+		-webkit-animation:chomp 0.2s ease-in infinite;
+	}
+
+	.logo-container:hover .head-container{
+		
+	}
+
+	.logo-container:hover body{
+	
+	}
+
+	@-webkit-keyframes flash{
+		from{
+			background:rgba(0,0,0,0.0);
+		}
+		to{
+			background:rgba(250,250,250,0.7);
+		}
+	}
+
+	@-webkit-keyframes shake{
+		0%{
+			-webkit-transform:rotate(0deg);
+		}
+		50%{
+			-webkit-transform:rotate(-20deg);
+		}
+		100%{
+			-webkit-transform:rotate(0deg);
+		}
+		
+	}
+
+	@-webkit-keyframes chomp{
+		0%{
+			-webkit-transform:rotate(0deg);
+		}
+		50%{
+			-webkit-transform:rotate(-20deg);
+		}
+		100%{
+			-webkit-transform:rotate(0deg);
+		}
+		
+	}
+
+	</style>
+</head>
+<body>
+	<div class="overlay"></div>
+	Go!
+
+	<div class="logo-container">
+		<div class="head-container">
+			<div class="jaw-container"></div>
+		</div>
+		
+	</div>
+
+	<audio controls>
+  <source src="horse.ogg" type="audio/ogg">
+  <source src="aud/rock-out.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+</body>
+</html>
