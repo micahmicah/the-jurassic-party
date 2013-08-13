@@ -6,7 +6,7 @@
 	body{
 		background:black;
 		margin:0px;
-		-webkit-animation: flash 0.125s 3s ease-in infinite;
+		-webkit-animation: flash 0.125s 3s ease-in 90;
 	}
 
 	.overlay{
@@ -27,6 +27,7 @@
 		/*border:1px solid yellow;*/
 		margin:5% auto;
 		background:url('img/logo-bg.png');
+		-webkit-animation: logo-shake 0.25s 3.25s linear 50;
 	}
 
 	.head-container{
@@ -38,8 +39,8 @@
 		left:298px;
 		top:-20px;
 		-webkit-transform-origin:25px 324px;
-		-webkit-animation:head-roar 3s ease-in-out 1,
-						  shake 0.25s 3s ease-in infinite;
+		-webkit-animation:head-roar 3.25s ease-in-out 1,
+						  shake 0.25s 3.25s ease-in 50;
 	/*	-webkit-animation:shake 0.25s ease-in-out infinite;*/
 		
 	}
@@ -53,8 +54,8 @@
 		left:67px;
 		top:206px;
 		-webkit-transform-origin:30px 30px;
-		-webkit-animation:jaw-roar 3s ease-in 1,
-						  chomp 0.2s 3s ease-in-out infinite;
+		-webkit-animation:jaw-roar 3.25s ease-in 1,
+						  chomp 0.2s 3.25s ease-in-out 50;
 	}
 
 	.logo-container:hover .head-container{
@@ -121,6 +122,21 @@
 			-webkit-transform:rotate(0deg);
 		}
 		
+	}
+
+	@-webkit-keyframes logo-shake{
+			0%{
+			-webkit-transform:rotate(0deg);
+		}
+		50%{
+			-webkit-transform:rotate(-5deg);
+		}
+		75%{
+			-webkit-transform:rotate(5deg);
+		}
+		100%{
+			-webkit-transform:rotate(0deg);
+		}
 	}
 
 	</style>
