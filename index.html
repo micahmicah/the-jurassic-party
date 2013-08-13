@@ -6,6 +6,7 @@
 	body{
 		background:black;
 		margin:0px;
+		-webkit-animation: flash 0.125s 3s ease-in infinite;
 	}
 
 	.overlay{
@@ -37,7 +38,9 @@
 		left:298px;
 		top:-20px;
 		-webkit-transform-origin:25px 324px;
-		-webkit-animation:shake 0.25s ease-in-out infinite;
+		-webkit-animation:head-roar 3s ease-in-out 1,
+						  shake 0.25s 3s ease-in infinite;
+	/*	-webkit-animation:shake 0.25s ease-in-out infinite;*/
 		
 	}
 
@@ -50,7 +53,8 @@
 		left:67px;
 		top:206px;
 		-webkit-transform-origin:30px 30px;
-		-webkit-animation:chomp 0.2s ease-in infinite;
+		-webkit-animation:jaw-roar 3s ease-in 1,
+						  chomp 0.2s 3s ease-in-out infinite;
 	}
 
 	.logo-container:hover .head-container{
@@ -61,12 +65,35 @@
 	
 	}
 
+	@-webkit-keyframes head-roar{
+		0%{
+			-webkit-transform:rotate(0deg);
+		}
+		50%{
+			-webkit-transform:rotate(-30deg);
+		}
+		100%{
+			-webkit-transform:rotate(0deg);
+		}
+	}
+
+	@-webkit-keyframes jaw-roar{
+		0%{
+			-webkit-transform:rotate(0deg);
+		}50%{
+			-webkit-transform:rotate(15deg);
+		}
+		100%{
+			-webkit-transform:rotate(0deg);
+		}
+	}
+
 	@-webkit-keyframes flash{
 		from{
-			background:rgba(0,0,0,0.0);
+			background:rgba(0,0,0,1.0);
 		}
 		to{
-			background:rgba(250,250,250,0.7);
+			background:rgba(250,250,250,1.0);
 		}
 	}
 
@@ -108,7 +135,7 @@
 		
 	</div>
 
-	<audio controls>
+	<audio  autoplay="autoplay">
   <source src="horse.ogg" type="audio/ogg">
   <source src="aud/rock-out.mp3" type="audio/mpeg">
 Your browser does not support the audio element.
