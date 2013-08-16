@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>30(million) Years Old</title>
-	<script src="js/modernizer.js?touch"></script>
+	<script src="js/modernizr.js?touch"></script>
 	<style type="text/css">
 	body{
 		background:black;
@@ -29,6 +29,9 @@
 		   -moz-transition:all 1.25s ease-in;
     			transition:all 1.25s ease-in;
 				
+	}
+	html.touch h1 {
+		font-size: 48px;
 	}
 
 	.reveal{
@@ -491,7 +494,6 @@
 			margin-top:5%;
 		}
 	}
-
 	</style>
 </head>
 <body>
@@ -504,8 +506,7 @@
 		
 	</div>
 
-	<audio id="audio"
-		onloadeddata="loaded()">
+	<audio id="audio">
 		<source src="aud/rock-out.ogg" type="audio/ogg">
 		<source src="aud/rock-out.mp3" type="audio/mpeg">
 		Your browser does not support the audio element.
@@ -518,17 +519,32 @@
 		body_el = document.getElementsByTagName('body')[0],
 		date_el = document.getElementById('date');
 
+
+	if (Modernizr.touch) {
+		body_el.ontouchstart = init;
+	}
+
+	audio_el.addEventListener('loadeddata', function () {
+		loaded();
+	});
+
+	// used for mobile safari, which requires
+	// user action to play audio.
+	function init() {
+		audio_el.load();
+	}
+
 	function loaded () {
 		pre_song();
 		audio_el.play();
 		setTimeout(function () {
-			post_song()
+			post_song();
 		}, 15000);
 	}
 
 	function pre_song () {
-		body_el.className += ' rock-out'
-	};
+		body_el.className += ' rock-out';
+	}
 
 	function post_song () {
 		date_el.className += ' reveal';
